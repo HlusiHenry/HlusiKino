@@ -2,7 +2,7 @@ import Foundation
 
 // MARK: - Local Storage Service
 
-actor StorageService {
+final class StorageService {
     static let shared = StorageService()
 
     private let defaults = UserDefaults.standard

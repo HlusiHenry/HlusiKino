@@ -124,7 +124,7 @@ struct ProfileGateView: View {
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Create") {
                         guard !newName.trimmingCharacters(in: .whitespaces).isEmpty else { return }
-                        _ = appState.createProfile(name: newName.trimmingCharacters(in: .whitespaces), icon: selectedIcon, bg: selectedColor.toHex())
+                        _ = appState.createProfile(name: newName.trimmingCharacters(in: .whitespaces), icon: selectedIcon, bg: selectedColor.toHex() ?? "#3b82f6")
                         newName = ""
                         showAdd = false
                     }

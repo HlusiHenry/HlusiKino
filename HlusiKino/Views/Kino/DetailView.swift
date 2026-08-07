@@ -131,9 +131,7 @@ struct DetailView: View {
                                           let listName = appState.activeWatchlistName else { return }
                                     let inWL = appState.isInWatchlist(itemID: item.id)
                                     let img = item.posterPath ?? ""
-                                    Task {
-                                        await appState.toggleWatchlist(itemID: item.id, title: item.displayTitle, poster: img, type: item.inferredType == .tv ? .tv : .movie)
-                                    }
+                                    appState.toggleWatchlist(itemID: item.id, title: item.displayTitle, poster: img, type: item.inferredType == .tv ? .tv : .movie)
                                 } label: {
                                     let inWL = appState.isInWatchlist(itemID: item.id)
                                     Label(inWL ? "In Watchlist" : "Watchlist", systemImage: inWL ? "checkmark" : "plus")

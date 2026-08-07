@@ -112,12 +112,11 @@ struct EPGView: View {
     }
 
     private var daySections: [(key: String, value: [EPGEvent])] {
-        let grouped = Dictionary(grouping: filteredEvents) { EPGService.shared.dayLabel(EPGService.shared.dayKey($0.date)) }  // This won't work, need to restructure
         // Group by day manually
         var dict: [String: [EPGEvent]] = [:]
         for event in filteredEvents {
-            let key = dayKey(event.date)
-            let label = EPGService.shared.dayLabel(key)
+            let key = localDayKey(event.date)
+            let label = localDayLabel(key)
             dict[label, default: []].append(event)
         }
         return dict.sorted { a, b in
@@ -130,12 +129,36 @@ struct EPGView: View {
         }
     }
 
-    private func dayKey(_ date: Date?) -> String {
+    private func localDayKey(_ date: Date?) -> String {
         guard let date = date else { return "Heute" }
         let f = DateFormatter()
         f.timeZone = TimeZone(identifier: "Europe/Berlin")
         f.dateFormat = "yyyy-MM-dd"
         return f.string(from: date)
+    }
+
+    private func localDayLabel(_ key: String) -> String {
+        let today = localDayKey(Date())
+        let tomorrow: String = {
+            guard let d = Calendar.current.date(byAdding: .day, value: 1, to: Date()) else { return "" }
+            return localDayKey(d)
+        }()
+
+        if key == today { return "Heute" }
+        if key == tomorrow { return "Morgen" }
+
+        guard let date = { () -> Date? in
+            let f = DateFormatter()
+            f.timeZone = TimeZone(identifier: "Europe/Berlin")
+            f.dateFormat = "yyyy-MM-dd"
+            return f.date(from: key + "T12:00:00")
+        }() else { return key }
+
+        let df = DateFormatter()
+        df.timeZone = TimeZone(identifier: "Europe/Berlin")
+        df.locale = Locale(identifier: "de_DE")
+        df.dateFormat = "EEEE, d. MMMM"
+        return df.string(from: date)
     }
 
     private func loadEvents() async {

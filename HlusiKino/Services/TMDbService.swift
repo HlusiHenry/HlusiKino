@@ -17,7 +17,7 @@ actor TMDbService {
 
     // MARK: - Image URLs
 
-    func imageURL(_ path: String?, size: String = "w342") -> URL? {
+    nonisolated func imageURL(_ path: String?, size: String = "w342") -> URL? {
         guard let path = path, !path.isEmpty else { return nil }
         return URL(string: "\(imageBase)/\(size)\(path)")
     }
@@ -65,7 +65,7 @@ actor TMDbService {
         guard !query.isEmpty else { return [] }
         let encoded = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? query
         let response: TMDBResponse<MediaItem> = try await fetch("/search/multi?query=\(encoded)")
-        return (response.results ?? [])
+        return (response.results)
             .filter { $0.mediaType == "movie" || $0.mediaType == "tv" }
     }
 

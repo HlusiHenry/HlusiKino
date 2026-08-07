@@ -93,9 +93,9 @@ class AppState: ObservableObject {
         }
     }
 
-    func toggleWatchlist(itemID: Int, title: String, poster: String, type: WatchlistEntry.MediaType) async {
+    func toggleWatchlist(itemID: Int, title: String, poster: String, type: WatchlistEntry.MediaType) {
         guard var profile = currentProfile, let listName = activeWatchlistName else { return }
-        profile = await storage.toggleWatchlist(profile: profile, itemID: itemID, title: title, poster: poster, type: type, listName: listName)
+        profile = storage.toggleWatchlist(profile: profile, itemID: itemID, title: title, poster: poster, type: type, listName: listName)
         currentProfile = profile
     }
 

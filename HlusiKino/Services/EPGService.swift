@@ -174,7 +174,7 @@ actor EPGService {
         let hScore = home?.score.flatMap(Int.init)
         let aScore = away?.score.flatMap(Int.init)
         let hasScore = hScore != nil && aScore != nil && (isLive || isDone)
-        let clock = isLive ? (comp?.status?.type?.detail ?? comp?.status?.displayClock ?? "") : ""
+        let clock = isLive ? (comp?.status?.type?.detail ?? comp?.status?.type?.displayClock ?? "") : ""
 
         let eventDate: Date? = {
             guard let ds = ev.date else { return nil }

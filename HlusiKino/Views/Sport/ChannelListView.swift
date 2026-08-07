@@ -53,7 +53,13 @@ struct ChannelListView: View {
                                 ChannelGroupView(
                                     group: group,
                                     isCollapsed: collapsedGroups.contains(group.id),
-                                    toggleCollapse: { collapsedGroups.toggle(group.id) },
+                                    toggleCollapse: {
+                                        if collapsedGroups.contains(group.id) {
+                                            collapsedGroups.remove(group.id)
+                                        } else {
+                                            collapsedGroups.insert(group.id)
+                                        }
+                                    },
                                     searchText: searchText.lowercased()
                                 )
                             }

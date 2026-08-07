@@ -10,12 +10,8 @@ struct WatchlistManagerView: View {
 
     var body: some View {
         NavigationStack {
-            VStack(spacing: 0) {
-                guard let profile = appState.currentProfile else {
-                    ContentUnavailableView("No Profile", systemImage: "person.slash", description: Text("Create or select a profile first"))
-                    return
-                }
-
+            if let profile = appState.currentProfile {
+                VStack(spacing: 0) {
                 let listNames = profile.watchlists.keys.sorted()
 
                 // List selector + management
@@ -118,9 +114,7 @@ struct WatchlistManagerView: View {
                             }
                             .swipeActions(edge: .trailing) {
                                 Button(role: .destructive) {
-                                    Task {
-                                        await appState.toggleWatchlist(itemID: entry.id, title: entry.title, poster: entry.poster, type: entry.type)
-                                    }
+                                    appState.toggleWatchlist(itemID: entry.id, title: entry.title, poster: entry.poster, type: entry.type)
                                 } label: {
                                     Label("Remove", systemImage: "trash")
                                 }
@@ -152,7 +146,10 @@ struct WatchlistManagerView: View {
                     selectedList = renameText
                 }
             }
+        } else {
+            ContentUnavailableView("No Profile", systemImage: "person.slash", description: Text("Create or select a profile first"))
         }
+    }
     }
 }
 
