@@ -6,143 +6,137 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1B07D16B30DC7C626A1B23E1 /* HlusiKinoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3DA4B7C31FEBAC5CC82383 /* HlusiKinoApp.swift */; };
-		03E37C6C692FC9ED5C713652 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67283F0C625C0DE6C7F9FF0 /* App.swift */; };
-		8C07158EF90DCF09C71DA19A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE4ECBA30503E49B76605F1 /* ContentView.swift */; };
-		7D5E63A44791F873C47FE065 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF33FC94E43670D793CBFE8D /* SettingsView.swift */; };
-		2771F69BAF9105CDB291DAAC /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FD4467661E081AD298B495 /* ColorExtension.swift */; };
-		0B4E499B77F3101653631497 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B356908A373013684CE01F /* Profile.swift */; };
-		4EA99CD03A241B5BA13EBCA4 /* MediaItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9C0624D1A9A80247B6C53B /* MediaItem.swift */; };
-		9AE8362564C369B5B3F22CD2 /* SportChannel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0BB73EF5E2D4C0BE9BD9AA /* SportChannel.swift */; };
-		16B293D3BC9FF8140A44D217 /* EPGEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D859B7BEAA157E26FD2EF590 /* EPGEvent.swift */; };
-		5C98BD1000D34F45287CFAC9 /* TMDbService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A7350B87D68DC9CD98081E /* TMDbService.swift */; };
-		49C5E615DBB3CB641E6E7CC3 /* EPGService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63FBCCBC8629001C1941B31 /* EPGService.swift */; };
-		0B6C43930E18598441BE9E9F /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E90DA8B289F6704E084879 /* StorageService.swift */; };
-		E2ECA6D67B767823F088FA9E /* ProfileGate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C971A329FB0900BCB7F09A /* ProfileGate.swift */; };
-		BA95F91EA0EB95CD46ED2AE2 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2838FC76FF28E057B50379F /* HomeView.swift */; };
-		336C10F2CD0F6EC7CF992BEA /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE031E7E1653D51D3B1C8AD /* SearchView.swift */; };
-		CEBF0B6E40826E824C8837E0 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EE4E7752DEEEC128F2A337 /* DetailView.swift */; };
-		62A6751BFD6119746B075CB5 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70942B148F2DDA5C5ACAAEFB /* PlayerView.swift */; };
-		E87A2878A6DBFF651E258BDF /* WatchlistManagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3862571D563583AD224C1B96 /* WatchlistManagerView.swift */; };
-		FAFFFEB88C1D88335DFFA48A /* ImportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AFB12E753D0EFCB8FB6B8A /* ImportView.swift */; };
-		F3DED554D066DA47EFE75C86 /* ChannelListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6CAA27C7B94B1D74BAAFB7 /* ChannelListView.swift */; };
-		FCF3F3226FCD5D5AA7836E0C /* ChannelPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD54759A4C84302C25C7738 /* ChannelPlayerView.swift */; };
-		F8C45AD3337D135E27EA5F0A /* EPGView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA284C6D7AE19F90C3141E7 /* EPGView.swift */; };
+		C19D327B20DE302AF3585BF7 /* HlusiKinoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409B91FA75ECAC80859C57AD /* HlusiKinoApp.swift */; };
+		F9ECE70E0C3A1BE281AC9BD9 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48095FEB2BEE33A347DE8BA5 /* App.swift */; };
+		59147AEBC62832764076280F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA447CE1DCA07AC054C1043 /* ContentView.swift */; };
+		FB3C7F11F420A63C88103C62 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9E526B329A947776DB4256 /* SettingsView.swift */; };
+		09A428D8E2A9C8504BB14065 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD975190A86FA67E21F286D3 /* ColorExtension.swift */; };
+		B5EB5FE41B4344627C5B2C0C /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D93ED5D5C262A61D70D9773 /* Profile.swift */; };
+		A7757FC277B248C676356A6E /* MediaItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999747D03432987A2BDA1E28 /* MediaItem.swift */; };
+		DFBD240D302622C451CFEB68 /* SportChannel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810857A2285F0B8891C1B31B /* SportChannel.swift */; };
+		50F399E4385ABCC8FA3464E0 /* EPGEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD66ADDFB825E623DDCBDD4D /* EPGEvent.swift */; };
+		76025B29F53121396AC7E3AD /* TMDbService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C6B43E646D57E0DC26ADEA /* TMDbService.swift */; };
+		1F150601ADFDE67070ECBD45 /* EPGService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA326EE24B6D328F4BB1D980 /* EPGService.swift */; };
+		4958512E24851B5801DBE99A /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2287035AD23A35C45195A95 /* StorageService.swift */; };
+		B3D1E8EC2E1A4A10F46B02E9 /* ProfileGate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD6090E6D00E21DF151E539 /* ProfileGate.swift */; };
+		02508380E4D4218436E1E7CD /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5618C65EA4FED0C0AC469A8C /* HomeView.swift */; };
+		47A60ECBCA2B7379ABB7AE4B /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DEE76F11804F72EAFBC4B0 /* SearchView.swift */; };
+		B827F5C0ECCFBB7E0C136A13 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4575FCFFE1869BB70625CF82 /* DetailView.swift */; };
+		DEE832439F5504D78FBCAC4C /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286B861CC521DD125C017101 /* PlayerView.swift */; };
+		18F8D94472F1A32DE09B61F7 /* WatchlistManagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33205B368FF5757D359B2194 /* WatchlistManagerView.swift */; };
+		926FBEF90A6589DBFAB093F2 /* ImportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761C1ADC6210933F81DCC136 /* ImportView.swift */; };
+		029AE6E42BFEDB173EA84F52 /* ChannelListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DECC957F70D70ADECD04980 /* ChannelListView.swift */; };
+		012D41B6E5A83A0B47E796AD /* ChannelPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9DCE76DD8D2CD6E677476 /* ChannelPlayerView.swift */; };
+		20BCDFBD31314AB622242502 /* EPGView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DCF41FD537E373D7552BC9 /* EPGView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		041FA0E12F2BDC7FF9AD950F /* HlusiKino.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HlusiKino.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		9A3DA4B7C31FEBAC5CC82383 /* HlusiKinoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "HlusiKinoApp.swift"; path = "HlusiKinoApp.swift"; sourceTree = "<group>"; };
-		B67283F0C625C0DE6C7F9FF0 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "App.swift"; path = "App.swift"; sourceTree = "<group>"; };
-		CAE4ECBA30503E49B76605F1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "ContentView.swift"; path = "ContentView.swift"; sourceTree = "<group>"; };
-		EF33FC94E43670D793CBFE8D /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "SettingsView.swift"; path = "SettingsView.swift"; sourceTree = "<group>"; };
-		09FD4467661E081AD298B495 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "ColorExtension.swift"; path = "ColorExtension.swift"; sourceTree = "<group>"; };
-		D8B356908A373013684CE01F /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Profile.swift"; path = "Models/Profile.swift"; sourceTree = "<group>"; };
-		DA9C0624D1A9A80247B6C53B /* MediaItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "MediaItem.swift"; path = "Models/MediaItem.swift"; sourceTree = "<group>"; };
-		EB0BB73EF5E2D4C0BE9BD9AA /* SportChannel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "SportChannel.swift"; path = "Models/SportChannel.swift"; sourceTree = "<group>"; };
-		D859B7BEAA157E26FD2EF590 /* EPGEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "EPGEvent.swift"; path = "Models/EPGEvent.swift"; sourceTree = "<group>"; };
-		60A7350B87D68DC9CD98081E /* TMDbService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "TMDbService.swift"; path = "Services/TMDbService.swift"; sourceTree = "<group>"; };
-		B63FBCCBC8629001C1941B31 /* EPGService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "EPGService.swift"; path = "Services/EPGService.swift"; sourceTree = "<group>"; };
-		18E90DA8B289F6704E084879 /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "StorageService.swift"; path = "Services/StorageService.swift"; sourceTree = "<group>"; };
-		D6C971A329FB0900BCB7F09A /* ProfileGate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "ProfileGate.swift"; path = "Views/Kino/ProfileGate.swift"; sourceTree = "<group>"; };
-		D2838FC76FF28E057B50379F /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "HomeView.swift"; path = "Views/Kino/HomeView.swift"; sourceTree = "<group>"; };
-		1BE031E7E1653D51D3B1C8AD /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "SearchView.swift"; path = "Views/Kino/SearchView.swift"; sourceTree = "<group>"; };
-		63EE4E7752DEEEC128F2A337 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "DetailView.swift"; path = "Views/Kino/DetailView.swift"; sourceTree = "<group>"; };
-		70942B148F2DDA5C5ACAAEFB /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "PlayerView.swift"; path = "Views/Kino/PlayerView.swift"; sourceTree = "<group>"; };
-		3862571D563583AD224C1B96 /* WatchlistManagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "WatchlistManagerView.swift"; path = "Views/Kino/WatchlistManagerView.swift"; sourceTree = "<group>"; };
-		18AFB12E753D0EFCB8FB6B8A /* ImportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "ImportView.swift"; path = "Views/Kino/ImportView.swift"; sourceTree = "<group>"; };
-		5A6CAA27C7B94B1D74BAAFB7 /* ChannelListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "ChannelListView.swift"; path = "Views/Sport/ChannelListView.swift"; sourceTree = "<group>"; };
-		1FD54759A4C84302C25C7738 /* ChannelPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "ChannelPlayerView.swift"; path = "Views/Sport/ChannelPlayerView.swift"; sourceTree = "<group>"; };
-		8BA284C6D7AE19F90C3141E7 /* EPGView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "EPGView.swift"; path = "Views/Sport/EPGView.swift"; sourceTree = "<group>"; };
-		E8C2788728AF0EEBFC53CD47 /* channels.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = "channels.json"; path = "Resources/channels.json"; sourceTree = "<group>"; };
-		331B3E425EF4B67A6BD0F062 /* Contents.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = "Contents.json"; path = "Resources/Assets.xcassets/Contents.json"; sourceTree = "<group>"; };
-		C13EAADF5694419726419DC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info.plist"; path = "Info.plist"; sourceTree = "<group>"; };
+		E69A5C86F190C5DEEC829C89 /* HlusiKino.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HlusiKino.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		409B91FA75ECAC80859C57AD /* HlusiKinoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "HlusiKinoApp.swift"; path = "HlusiKino/HlusiKinoApp.swift"; sourceTree = "<group>"; };
+		48095FEB2BEE33A347DE8BA5 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "App.swift"; path = "HlusiKino/App.swift"; sourceTree = "<group>"; };
+		6DA447CE1DCA07AC054C1043 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "ContentView.swift"; path = "HlusiKino/ContentView.swift"; sourceTree = "<group>"; };
+		1A9E526B329A947776DB4256 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "SettingsView.swift"; path = "HlusiKino/SettingsView.swift"; sourceTree = "<group>"; };
+		CD975190A86FA67E21F286D3 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "ColorExtension.swift"; path = "HlusiKino/ColorExtension.swift"; sourceTree = "<group>"; };
+		1D93ED5D5C262A61D70D9773 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Profile.swift"; path = "HlusiKino/Models/Profile.swift"; sourceTree = "<group>"; };
+		999747D03432987A2BDA1E28 /* MediaItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "MediaItem.swift"; path = "HlusiKino/Models/MediaItem.swift"; sourceTree = "<group>"; };
+		810857A2285F0B8891C1B31B /* SportChannel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "SportChannel.swift"; path = "HlusiKino/Models/SportChannel.swift"; sourceTree = "<group>"; };
+		CD66ADDFB825E623DDCBDD4D /* EPGEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "EPGEvent.swift"; path = "HlusiKino/Models/EPGEvent.swift"; sourceTree = "<group>"; };
+		65C6B43E646D57E0DC26ADEA /* TMDbService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "TMDbService.swift"; path = "HlusiKino/Services/TMDbService.swift"; sourceTree = "<group>"; };
+		EA326EE24B6D328F4BB1D980 /* EPGService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "EPGService.swift"; path = "HlusiKino/Services/EPGService.swift"; sourceTree = "<group>"; };
+		F2287035AD23A35C45195A95 /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "StorageService.swift"; path = "HlusiKino/Services/StorageService.swift"; sourceTree = "<group>"; };
+		BAD6090E6D00E21DF151E539 /* ProfileGate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "ProfileGate.swift"; path = "HlusiKino/Views/Kino/ProfileGate.swift"; sourceTree = "<group>"; };
+		5618C65EA4FED0C0AC469A8C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "HomeView.swift"; path = "HlusiKino/Views/Kino/HomeView.swift"; sourceTree = "<group>"; };
+		B8DEE76F11804F72EAFBC4B0 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "SearchView.swift"; path = "HlusiKino/Views/Kino/SearchView.swift"; sourceTree = "<group>"; };
+		4575FCFFE1869BB70625CF82 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "DetailView.swift"; path = "HlusiKino/Views/Kino/DetailView.swift"; sourceTree = "<group>"; };
+		286B861CC521DD125C017101 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "PlayerView.swift"; path = "HlusiKino/Views/Kino/PlayerView.swift"; sourceTree = "<group>"; };
+		33205B368FF5757D359B2194 /* WatchlistManagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "WatchlistManagerView.swift"; path = "HlusiKino/Views/Kino/WatchlistManagerView.swift"; sourceTree = "<group>"; };
+		761C1ADC6210933F81DCC136 /* ImportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "ImportView.swift"; path = "HlusiKino/Views/Kino/ImportView.swift"; sourceTree = "<group>"; };
+		8DECC957F70D70ADECD04980 /* ChannelListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "ChannelListView.swift"; path = "HlusiKino/Views/Sport/ChannelListView.swift"; sourceTree = "<group>"; };
+		EAD9DCE76DD8D2CD6E677476 /* ChannelPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "ChannelPlayerView.swift"; path = "HlusiKino/Views/Sport/ChannelPlayerView.swift"; sourceTree = "<group>"; };
+		32DCF41FD537E373D7552BC9 /* EPGView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "EPGView.swift"; path = "HlusiKino/Views/Sport/EPGView.swift"; sourceTree = "<group>"; };
+		639F82771D22EBFA58F879C6 /* channels.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = "channels.json"; path = "HlusiKino/Resources/channels.json"; sourceTree = "<group>"; };
+		998A49F6C4AC33F040A831DD /* Contents.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = "Contents.json"; path = "HlusiKino/Resources/Assets.xcassets/Contents.json"; sourceTree = "<group>"; };
+		0D45005991B38FEFD5F4342C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info.plist"; path = "HlusiKino/Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
 		9C2ECCECBF1BD235E17368F8 = {
 			isa = PBXGroup;
 			children = (
-				9A3DA4B7C31FEBAC5CC82383 /* HlusiKinoApp.swift */,
-				B67283F0C625C0DE6C7F9FF0 /* App.swift */,
-				CAE4ECBA30503E49B76605F1 /* ContentView.swift */,
-				EF33FC94E43670D793CBFE8D /* SettingsView.swift */,
-				09FD4467661E081AD298B495 /* ColorExtension.swift */,
+				409B91FA75ECAC80859C57AD /* HlusiKinoApp.swift */,
+				48095FEB2BEE33A347DE8BA5 /* App.swift */,
+				6DA447CE1DCA07AC054C1043 /* ContentView.swift */,
+				1A9E526B329A947776DB4256 /* SettingsView.swift */,
+				CD975190A86FA67E21F286D3 /* ColorExtension.swift */,
 				73844DED71E1D99D63207597 /* Models */,
 				25E373960067420AB5012E15 /* Services */,
 				3C1EBF6B0BD5602EC5EA544E /* Kino */,
 				82BEF6379C88F08C30FD2CFD /* Sport */,
 				FFE8D62EBCB495C74DFA5960 /* Resources */,
-				C13EAADF5694419726419DC4 /* Info.plist */,
+				0D45005991B38FEFD5F4342C /* Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
 		73844DED71E1D99D63207597 = {
 			isa = PBXGroup;
 			children = (
-				D8B356908A373013684CE01F /* Profile.swift */,
-				DA9C0624D1A9A80247B6C53B /* MediaItem.swift */,
-				EB0BB73EF5E2D4C0BE9BD9AA /* SportChannel.swift */,
-				D859B7BEAA157E26FD2EF590 /* EPGEvent.swift */,
+				1D93ED5D5C262A61D70D9773 /* Profile.swift */,
+				999747D03432987A2BDA1E28 /* MediaItem.swift */,
+				810857A2285F0B8891C1B31B /* SportChannel.swift */,
+				CD66ADDFB825E623DDCBDD4D /* EPGEvent.swift */,
 			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		25E373960067420AB5012E15 = {
 			isa = PBXGroup;
 			children = (
-				60A7350B87D68DC9CD98081E /* TMDbService.swift */,
-				B63FBCCBC8629001C1941B31 /* EPGService.swift */,
-				18E90DA8B289F6704E084879 /* StorageService.swift */,
+				65C6B43E646D57E0DC26ADEA /* TMDbService.swift */,
+				EA326EE24B6D328F4BB1D980 /* EPGService.swift */,
+				F2287035AD23A35C45195A95 /* StorageService.swift */,
 			);
-			path = Services;
 			sourceTree = "<group>";
 		};
 		3C1EBF6B0BD5602EC5EA544E = {
 			isa = PBXGroup;
 			children = (
-				D6C971A329FB0900BCB7F09A /* ProfileGate.swift */,
-				D2838FC76FF28E057B50379F /* HomeView.swift */,
-				1BE031E7E1653D51D3B1C8AD /* SearchView.swift */,
-				63EE4E7752DEEEC128F2A337 /* DetailView.swift */,
-				70942B148F2DDA5C5ACAAEFB /* PlayerView.swift */,
-				3862571D563583AD224C1B96 /* WatchlistManagerView.swift */,
-				18AFB12E753D0EFCB8FB6B8A /* ImportView.swift */,
+				BAD6090E6D00E21DF151E539 /* ProfileGate.swift */,
+				5618C65EA4FED0C0AC469A8C /* HomeView.swift */,
+				B8DEE76F11804F72EAFBC4B0 /* SearchView.swift */,
+				4575FCFFE1869BB70625CF82 /* DetailView.swift */,
+				286B861CC521DD125C017101 /* PlayerView.swift */,
+				33205B368FF5757D359B2194 /* WatchlistManagerView.swift */,
+				761C1ADC6210933F81DCC136 /* ImportView.swift */,
 			);
-			path = Kino;
 			sourceTree = "<group>";
 		};
 		82BEF6379C88F08C30FD2CFD = {
 			isa = PBXGroup;
 			children = (
-				5A6CAA27C7B94B1D74BAAFB7 /* ChannelListView.swift */,
-				1FD54759A4C84302C25C7738 /* ChannelPlayerView.swift */,
-				8BA284C6D7AE19F90C3141E7 /* EPGView.swift */,
+				8DECC957F70D70ADECD04980 /* ChannelListView.swift */,
+				EAD9DCE76DD8D2CD6E677476 /* ChannelPlayerView.swift */,
+				32DCF41FD537E373D7552BC9 /* EPGView.swift */,
 			);
-			path = Sport;
 			sourceTree = "<group>";
 		};
 		FFE8D62EBCB495C74DFA5960 = {
 			isa = PBXGroup;
 			children = (
-				E8C2788728AF0EEBFC53CD47 /* channels.json */,
+				639F82771D22EBFA58F879C6 /* channels.json */,
 				FBD43D0F2AEDBFC83963FAFC /* Assets.xcassets */,
 			);
-			path = Resources;
 			sourceTree = "<group>";
 		};
 		FBD43D0F2AEDBFC83963FAFC = {
 			isa = PBXGroup;
 			children = (
-				331B3E425EF4B67A6BD0F062 /* Contents.json */,
+				998A49F6C4AC33F040A831DD /* Contents.json */,
 			);
-			path = Assets.xcassets;
 			sourceTree = "<group>";
 		};
 		B157BC425EAA5DA43AF902E1 = {
 			isa = PBXGroup;
 			children = (
-				041FA0E12F2BDC7FF9AD950F /* HlusiKino.app */,
+				E69A5C86F190C5DEEC829C89 /* HlusiKino.app */,
 			);
 			sourceTree = "<group>";
 		};
@@ -152,14 +146,12 @@
 		741FCBDD1C83C96AFA8F8CE3 /* HlusiKino */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 54D1BBADC8A4A5F49FC57F02 /* Build configuration list for PBXNativeTarget "HlusiKino" */;
-			buildPhases = (
-				21C345CA50C6C8EFECF8525F /* Sources */,
-			);
+			buildPhases = (21C345CA50C6C8EFECF8525F /* Sources */,);
 			buildRules = ();
 			dependencies = ();
 			name = HlusiKino;
 			productName = HlusiKino;
-			productReference = 041FA0E12F2BDC7FF9AD950F /* HlusiKino.app */;
+			productReference = E69A5C86F190C5DEEC829C89 /* HlusiKino.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -190,28 +182,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1B07D16B30DC7C626A1B23E1 /* HlusiKinoApp.swift in Sources */,
-				03E37C6C692FC9ED5C713652 /* App.swift in Sources */,
-				8C07158EF90DCF09C71DA19A /* ContentView.swift in Sources */,
-				7D5E63A44791F873C47FE065 /* SettingsView.swift in Sources */,
-				2771F69BAF9105CDB291DAAC /* ColorExtension.swift in Sources */,
-				0B4E499B77F3101653631497 /* Profile.swift in Sources */,
-				4EA99CD03A241B5BA13EBCA4 /* MediaItem.swift in Sources */,
-				9AE8362564C369B5B3F22CD2 /* SportChannel.swift in Sources */,
-				16B293D3BC9FF8140A44D217 /* EPGEvent.swift in Sources */,
-				5C98BD1000D34F45287CFAC9 /* TMDbService.swift in Sources */,
-				49C5E615DBB3CB641E6E7CC3 /* EPGService.swift in Sources */,
-				0B6C43930E18598441BE9E9F /* StorageService.swift in Sources */,
-				E2ECA6D67B767823F088FA9E /* ProfileGate.swift in Sources */,
-				BA95F91EA0EB95CD46ED2AE2 /* HomeView.swift in Sources */,
-				336C10F2CD0F6EC7CF992BEA /* SearchView.swift in Sources */,
-				CEBF0B6E40826E824C8837E0 /* DetailView.swift in Sources */,
-				62A6751BFD6119746B075CB5 /* PlayerView.swift in Sources */,
-				E87A2878A6DBFF651E258BDF /* WatchlistManagerView.swift in Sources */,
-				FAFFFEB88C1D88335DFFA48A /* ImportView.swift in Sources */,
-				F3DED554D066DA47EFE75C86 /* ChannelListView.swift in Sources */,
-				FCF3F3226FCD5D5AA7836E0C /* ChannelPlayerView.swift in Sources */,
-				F8C45AD3337D135E27EA5F0A /* EPGView.swift in Sources */,
+				C19D327B20DE302AF3585BF7 /* HlusiKinoApp.swift in Sources */,
+				F9ECE70E0C3A1BE281AC9BD9 /* App.swift in Sources */,
+				59147AEBC62832764076280F /* ContentView.swift in Sources */,
+				FB3C7F11F420A63C88103C62 /* SettingsView.swift in Sources */,
+				09A428D8E2A9C8504BB14065 /* ColorExtension.swift in Sources */,
+				B5EB5FE41B4344627C5B2C0C /* Profile.swift in Sources */,
+				A7757FC277B248C676356A6E /* MediaItem.swift in Sources */,
+				DFBD240D302622C451CFEB68 /* SportChannel.swift in Sources */,
+				50F399E4385ABCC8FA3464E0 /* EPGEvent.swift in Sources */,
+				76025B29F53121396AC7E3AD /* TMDbService.swift in Sources */,
+				1F150601ADFDE67070ECBD45 /* EPGService.swift in Sources */,
+				4958512E24851B5801DBE99A /* StorageService.swift in Sources */,
+				B3D1E8EC2E1A4A10F46B02E9 /* ProfileGate.swift in Sources */,
+				02508380E4D4218436E1E7CD /* HomeView.swift in Sources */,
+				47A60ECBCA2B7379ABB7AE4B /* SearchView.swift in Sources */,
+				B827F5C0ECCFBB7E0C136A13 /* DetailView.swift in Sources */,
+				DEE832439F5504D78FBCAC4C /* PlayerView.swift in Sources */,
+				18F8D94472F1A32DE09B61F7 /* WatchlistManagerView.swift in Sources */,
+				926FBEF90A6589DBFAB093F2 /* ImportView.swift in Sources */,
+				029AE6E42BFEDB173EA84F52 /* ChannelListView.swift in Sources */,
+				012D41B6E5A83A0B47E796AD /* ChannelPlayerView.swift in Sources */,
+				20BCDFBD31314AB622242502 /* EPGView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
