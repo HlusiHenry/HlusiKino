@@ -7,12 +7,24 @@ struct SearchView: View {
     @State private var query = ""
     @State private var results: [MediaItem] = []
     @State private var isSearching = false
+    @State private var errorMessage: String?
 
-    private let debouncer = Debouncer(delay: 0.3)
+    private let debouncer = Debouncer(delay: 0.4)
 
     var body: some View {
         NavigationStack {
             VStack(spacing: 0) {
+                // Error banner
+                if let msg = errorMessage {
+                    HStack {
+                        Image(systemName: "wifi.slash").foregroundStyle(Color(hex: "#f87171"))
+                        Text(msg).font(.caption).foregroundStyle(Color(hex: "#fca5a5"))
+                        Spacer()
+                    }
+                    .padding(10)
+                    .background(Color(hex: "#7f1d1d").opacity(0.5))
+                }
+
                 // Search field
                 HStack {
                     Image(systemName: "magnifyingglass")
@@ -20,7 +32,8 @@ struct SearchView: View {
                     TextField("Search movies & shows...", text: $query)
                         .foregroundStyle(Color(hex: "#fafafa"))
                         .onChange(of: query) { _, newValue in
-                            debouncer.call { Task { await search(newValue) } }
+                            errorMessage = nil
+                            debouncer.call { await search(newValue) }
                         }
                     if !query.isEmpty {
                         Button { query = ""; results = [] } label: {
@@ -78,8 +91,12 @@ struct SearchView: View {
         isSearching = true
         defer { isSearching = false }
 
-        guard let r = try? await TMDbService.shared.search(query: q) else { return }
-        await MainActor.run { results = Array(r.prefix(15)) }
+        do {
+            let r = try await TMDbService.shared.search(query: q)
+            await MainActor.run { results = Array(r.prefix(15)) }
+        } catch {
+            await MainActor.run { results = []; errorMessage = "Search failed. Try again." }
+        }
     }
 }
 
@@ -135,19 +152,20 @@ struct SearchResultRow: View {
     }
 }
 
-// MARK: - Debouncer Utility
+// MARK: - Debouncer
 
-class Debouncer {
+final class Debouncer: @unchecked Sendable {
     private let delay: TimeInterval
     private var task: Task<Void, Never>?
 
     init(delay: TimeInterval) { self.delay = delay }
 
-    func call(action: @escaping () -> Void) {
+    func call(action: @escaping @Sendable () async -> Void) {
         task?.cancel()
-        task = Task {
+        task = Task { @MainActor in
             try? await Task.sleep(nanoseconds: UInt64(delay * 1_000_000_000))
-            if !Task.isCancelled { action() }
+            guard !Task.isCancelled else { return }
+            await action()
         }
     }
 }

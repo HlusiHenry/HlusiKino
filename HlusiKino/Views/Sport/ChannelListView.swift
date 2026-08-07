@@ -8,6 +8,7 @@ struct ChannelListView: View {
     @State private var selectedTag: String? = nil
     @State private var collapsedGroups: Set<String> = []
     @State private var isLoading = true
+    @State private var errorMessage: String?
 
     @EnvironmentObject var appState: AppState
 
@@ -25,6 +26,21 @@ struct ChannelListView: View {
     var body: some View {
         NavigationStack {
             VStack(spacing: 0) {
+                // Error banner
+                if let msg = errorMessage {
+                    HStack {
+                        Image(systemName: "wifi.slash").foregroundStyle(Color(hex: "#f87171"))
+                        Text(msg).font(.caption).foregroundStyle(Color(hex: "#fca5a5"))
+                        Spacer()
+                        Button("Retry") { errorMessage = nil; Task { await loadChannels() } }
+                            .font(.caption.bold()).foregroundStyle(.white)
+                            .padding(.horizontal, 10).padding(.vertical, 4)
+                            .background(Color(hex: "#dc2626")).cornerRadius(6)
+                    }
+                    .padding(10)
+                    .background(Color(hex: "#7f1d1d").opacity(0.5))
+                }
+
                 // Tag filter bar
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 6) {

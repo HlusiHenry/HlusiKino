@@ -2,7 +2,7 @@ import Foundation
 
 // MARK: - TMDB API Service
 
-actor TMDbService {
+final class TMDbService {
     static let shared = TMDbService()
 
     private let apiKey = "790bd49a274d4dea7dd0dd4cbb3ccd73"
@@ -17,7 +17,7 @@ actor TMDbService {
 
     // MARK: - Image URLs
 
-    nonisolated func imageURL(_ path: String?, size: String = "w342") -> URL? {
+    func imageURL(_ path: String?, size: String = "w342") -> URL? {
         guard let path = path, !path.isEmpty else { return nil }
         return URL(string: "\(imageBase)/\(size)\(path)")
     }
@@ -26,7 +26,7 @@ actor TMDbService {
 
     private func fetch<T: Codable>(_ path: String) async throws -> T {
         let sep = path.contains("?") ? "&" : "?"
-        let urlString = "\(baseURL)\(path)\(sep)api_key=\(apiKey)&language=en"
+        let urlString = "\(baseURL)\(path)\(sep)api_key=\(apiKey)&language=de"
         guard let url = URL(string: urlString) else {
             throw URLError(.badURL)
         }
@@ -65,7 +65,7 @@ actor TMDbService {
         guard !query.isEmpty else { return [] }
         let encoded = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? query
         let response: TMDBResponse<MediaItem> = try await fetch("/search/multi?query=\(encoded)")
-        return (response.results)
+        return response.results
             .filter { $0.mediaType == "movie" || $0.mediaType == "tv" }
     }
 

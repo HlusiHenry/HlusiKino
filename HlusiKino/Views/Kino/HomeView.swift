@@ -1,6 +1,6 @@
 import SwiftUI
 
-// MARK: - Home View (Hero + Category Rows)
+// MARK: - Home View
 
 struct HomeView: View {
     @EnvironmentObject var appState: AppState
@@ -11,10 +11,16 @@ struct HomeView: View {
     @State private var heroItem: MediaItem?
     @State private var heroTimer: Timer?
     @State private var isLoading = true
+    @State private var errorMessage: String?
 
     var body: some View {
         ScrollView {
             VStack(spacing: 0) {
+                // Error banner
+                if let msg = errorMessage {
+                    errorBanner(msg)
+                }
+
                 // Hero
                 if let hero = heroItem {
                     HeroBanner(item: hero) {
@@ -25,28 +31,30 @@ struct HomeView: View {
                     .frame(height: 420)
                 }
 
-                // Category rows
-                VStack(spacing: 24) {
-                    if !trendingMovies.isEmpty {
-                        CategoryRow(title: "Trending Movies", items: trendingMovies, type: .movie) { openDetail($0) }
-                    }
-                    if !trendingTV.isEmpty {
-                        CategoryRow(title: "Trending Shows", items: trendingTV, type: .tv) { openDetail($0) }
-                    }
-                    if !popular.isEmpty {
-                        CategoryRow(title: "Popular", items: popular, type: .movie) { openDetail($0) }
-                    }
-                    if !topRated.isEmpty {
-                        CategoryRow(title: "Top Rated", items: topRated, type: .movie) { openDetail($0) }
-                    }
+                if isLoading {
+                    ProgressView()
+                        .padding(.top, 100)
+                        .tint(Color(hex: "#a1a1aa"))
+                } else {
+                    VStack(spacing: 24) {
+                        if !trendingMovies.isEmpty {
+                            CategoryRow(title: "Trending Movies", items: trendingMovies, type: .movie) { openDetail($0) }
+                        }
+                        if !trendingTV.isEmpty {
+                            CategoryRow(title: "Trending Shows", items: trendingTV, type: .tv) { openDetail($0) }
+                        }
+                        if !popular.isEmpty {
+                            CategoryRow(title: "Popular", items: popular, type: .movie) { openDetail($0) }
+                        }
+                        if !topRated.isEmpty {
+                            CategoryRow(title: "Top Rated", items: topRated, type: .movie) { openDetail($0) }
+                        }
 
-                    // Watchlist sections
-                    WatchlistGrid()
-
-                    // Recommendations
-                    RecommendationsRow()
+                        WatchlistGrid()
+                        RecommendationsRow()
+                    }
+                    .padding(.top, 20)
                 }
-                .padding(.top, 20)
             }
         }
         .background(Color(hex: "#09090b"))
@@ -55,24 +63,56 @@ struct HomeView: View {
         .onDisappear { heroTimer?.invalidate() }
     }
 
+    private func errorBanner(_ msg: String) -> some View {
+        HStack {
+            Image(systemName: "wifi.slash")
+                .foregroundStyle(Color(hex: "#f87171"))
+            Text(msg)
+                .font(.caption)
+                .foregroundStyle(Color(hex: "#fca5a5"))
+            Spacer()
+            Button("Retry") {
+                errorMessage = nil
+                isLoading = true
+                Task { await loadAll() }
+            }
+            .font(.caption.bold())
+            .foregroundStyle(.white)
+            .padding(.horizontal, 10)
+            .padding(.vertical, 4)
+            .background(Color(hex: "#dc2626"))
+            .cornerRadius(6)
+        }
+        .padding(10)
+        .background(Color(hex: "#7f1d1d").opacity(0.5))
+    }
+
     private func loadAll() async {
-        async let movies = TMDbService.shared.trendingMovies()
-        async let tv = TMDbService.shared.trendingTV()
-        async let pop = TMDbService.shared.popular()
-        async let top = TMDbService.shared.topRated()
+        errorMessage = nil
+        do {
+            async let movies = TMDbService.shared.trendingMovies()
+            async let tv = TMDbService.shared.trendingTV()
+            async let pop = TMDbService.shared.popular()
+            async let top = TMDbService.shared.topRated()
 
-        let (m, t, p, r) = await (try? movies, try? tv, try? pop, try? top)
+            let (m, t, p, r) = try await (movies, tv, pop, top)
 
-        await MainActor.run {
-            trendingMovies = m ?? []
-            trendingTV = t ?? []
-            popular = p ?? []
-            topRated = r ?? []
-            isLoading = false
+            await MainActor.run {
+                trendingMovies = m
+                trendingTV = t
+                popular = p
+                topRated = r
+                isLoading = false
 
-            if heroItem == nil, let first = m?.randomElement() {
-                heroItem = first
-                startHeroTimer()
+                if heroItem == nil, let first = m.randomElement() {
+                    heroItem = first
+                    startHeroTimer()
+                }
+            }
+        } catch {
+            await MainActor.run {
+                isLoading = false
+                errorMessage = "Could not load content. Check your connection."
             }
         }
     }
@@ -109,7 +149,6 @@ struct HeroBanner: View {
 
     var body: some View {
         ZStack(alignment: .bottom) {
-            // Backdrop
             AsyncImage(url: TMDbService.shared.imageURL(item.backdropPath ?? item.posterPath, size: "original")) { phase in
                 switch phase {
                 case .success(let image):
@@ -131,7 +170,6 @@ struct HeroBanner: View {
                 )
             )
 
-            // Info
             VStack(alignment: .leading, spacing: 8) {
                 Text(item.displayTitle)
                     .font(.system(size: 28, weight: .bold, design: .rounded))
@@ -231,7 +269,6 @@ struct MediaCard: View {
                     .cornerRadius(8)
                     .clipped()
 
-                    // Type badge
                     Text(type == .tv ? "SERIES" : "MOVIE")
                         .font(.system(size: 9, weight: .bold))
                         .padding(.horizontal, 6)
@@ -262,7 +299,7 @@ struct MediaCard: View {
     }
 }
 
-// MARK: - Watchlist Grid (shows all watchlist items on home)
+// MARK: - Watchlist Grid
 
 struct WatchlistGrid: View {
     @EnvironmentObject var appState: AppState
@@ -273,7 +310,7 @@ struct WatchlistGrid: View {
                 if !items.isEmpty {
                     VStack(alignment: .leading, spacing: 10) {
                         Button {
-                            appState.selectedTab = 1  // Watchlist tab
+                            appState.selectedTab = 1
                         } label: {
                             HStack {
                                 Text(name)
@@ -309,17 +346,26 @@ struct WatchlistCard: View {
     @EnvironmentObject var appState: AppState
 
     var body: some View {
-        AsyncImage(url: TMDbService.shared.imageURL(entry.poster, size: "w342")) { phase in
-            switch phase {
-            case .success(let image):
-                image.resizable().aspectRatio(contentMode: .fill)
-            default:
-                Color(hex: "#27272a")
+        VStack(spacing: 4) {
+            AsyncImage(url: TMDbService.shared.imageURL(entry.poster, size: "w342")) { phase in
+                switch phase {
+                case .success(let image):
+                    image.resizable().aspectRatio(contentMode: .fill)
+                default:
+                    Color(hex: "#27272a")
+                }
             }
+            .frame(width: 100, height: 150)
+            .cornerRadius(8)
+            .clipped()
+
+            Text(entry.title)
+                .font(.system(size: 10))
+                .foregroundStyle(Color(hex: "#d4d4d8"))
+                .lineLimit(2)
+                .frame(width: 100, alignment: .leading)
+                .multilineTextAlignment(.leading)
         }
-        .frame(width: 100, height: 150)
-        .cornerRadius(8)
-        .clipped()
         .onTapGesture {
             let item = MediaItem(id: entry.id, title: entry.title, name: nil, posterPath: entry.poster, backdropPath: nil, voteAverage: nil, releaseDate: nil, firstAirDate: nil, overview: nil, originalLanguage: nil, mediaType: entry.type.rawValue, genreIDs: nil)
             appState.selectedDetail = item
