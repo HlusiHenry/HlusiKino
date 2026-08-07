@@ -116,13 +116,7 @@ struct ChannelListView: View {
     }
 
     private func loadChannels() async {
-        guard let url = Bundle.main.url(forResource: "channels", withExtension: "json"),
-              let data = try? Data(contentsOf: url),
-              let decoded = try? JSONDecoder().decode([SportChannelGroup].self, from: data) else {
-            isLoading = false
-            return
-        }
-        groups = decoded
+        groups = ChannelData.loadGroups()
         isLoading = false
     }
 }

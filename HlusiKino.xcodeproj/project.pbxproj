@@ -28,6 +28,7 @@
 		029AE6E42BFEDB173EA84F52 /* ChannelListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DECC957F70D70ADECD04980 /* ChannelListView.swift */; };
 		012D41B6E5A83A0B47E796AD /* ChannelPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9DCE76DD8D2CD6E677476 /* ChannelPlayerView.swift */; };
 		20BCDFBD31314AB622242502 /* EPGView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DCF41FD537E373D7552BC9 /* EPGView.swift */; };
+		FCF1C02CA7D5002AC68789C0 /* ChannelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6697EC5CCFC03708DE24CC3 /* ChannelData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +58,7 @@
 		639F82771D22EBFA58F879C6 /* channels.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = "channels.json"; path = "HlusiKino/Resources/channels.json"; sourceTree = "<group>"; };
 		998A49F6C4AC33F040A831DD /* Contents.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = "Contents.json"; path = "HlusiKino/Resources/Assets.xcassets/Contents.json"; sourceTree = "<group>"; };
 		0D45005991B38FEFD5F4342C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info.plist"; path = "HlusiKino/Info.plist"; sourceTree = "<group>"; };
+		C6697EC5CCFC03708DE24CC3 /* ChannelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "ChannelData.swift"; path = "HlusiKino/Models/ChannelData.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -84,6 +86,7 @@
 				999747D03432987A2BDA1E28 /* MediaItem.swift */,
 				810857A2285F0B8891C1B31B /* SportChannel.swift */,
 				CD66ADDFB825E623DDCBDD4D /* EPGEvent.swift */,
+				C6697EC5CCFC03708DE24CC3 /* ChannelData.swift */,
 			);
 			sourceTree = "<group>";
 		};
@@ -204,6 +207,7 @@
 				029AE6E42BFEDB173EA84F52 /* ChannelListView.swift in Sources */,
 				012D41B6E5A83A0B47E796AD /* ChannelPlayerView.swift in Sources */,
 				20BCDFBD31314AB622242502 /* EPGView.swift in Sources */,
+				FCF1C02CA7D5002AC68789C0 /* ChannelData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,11 +261,11 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = DF37B9B3J8;
 				INFOPLIST_FILE = HlusiKino/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.hlusikino.app;
+				PRODUCT_BUNDLE_IDENTIFIER = de.henry.HlusiKino;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -276,11 +280,11 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = DF37B9B3J8;
 				INFOPLIST_FILE = HlusiKino/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.hlusikino.app;
+				PRODUCT_BUNDLE_IDENTIFIER = de.henry.HlusiKino;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

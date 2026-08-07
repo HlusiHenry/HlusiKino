@@ -19,7 +19,7 @@ struct ChannelPlayerView: View {
                 // Player
                 ZStack {
                     Color.black
-                    EmbedWebView(urlString: currentURL)
+                    EmbedWebView(urlString: currentURL, isLoading: $isLoading)
 
                     if isLoading {
                         ProgressView().tint(.white)
