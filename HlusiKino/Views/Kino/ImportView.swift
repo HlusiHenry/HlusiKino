@@ -18,7 +18,7 @@ struct ImportView: View {
             VStack(spacing: 16) {
                 // Target list name
                 VStack(alignment: .leading, spacing: 6) {
-                    Text("Target Watchlist").font(.caption).foregroundStyle(Color(hex: "#a1a1aa))
+                    Text("Target Watchlist").font(.caption).foregroundStyle(Color(hex: "#a1a1aa"))
                     TextField("List name", text: $targetListName)
                         .padding(10)
                         .background(Color(hex: "#27272a"))
@@ -28,10 +28,10 @@ struct ImportView: View {
 
                 // CSV input
                 VStack(alignment: .leading, spacing: 6) {
-                    Text("IMDb CSV Export").font(.caption).foregroundStyle(Color(hex: "#a1a1aa))
+                    Text("IMDb CSV Export").font(.caption).foregroundStyle(Color(hex: "#a1a1aa"))
                     Text("1. Go to your IMDb watchlist\n2. Click \"Export this list\"\n3. Open CSV, copy all content\n4. Paste below")
                         .font(.caption2)
-                        .foregroundStyle(Color(hex: "#52525b))
+                        .foregroundStyle(Color(hex: "#52525b"))
                         .lineSpacing(2)
 
                     TextEditor(text: $csvContent)
@@ -39,7 +39,7 @@ struct ImportView: View {
                         .padding(8)
                         .background(Color(hex: "#18181b"))
                         .cornerRadius(8)
-                        .foregroundStyle(Color(hex: "#a1a1aa))
+                        .foregroundStyle(Color(hex: "#a1a1aa"))
                         .frame(minHeight: 150)
                         .overlay(
                             RoundedRectangle(cornerRadius: 8)
@@ -52,7 +52,7 @@ struct ImportView: View {
                     } label: {
                         Label("Open CSV File", systemImage: "folder")
                             .font(.caption)
-                            .foregroundStyle(Color(hex: "#3b82f6))
+                            .foregroundStyle(Color(hex: "#3b82f6"))
                     }
                 }
 
@@ -60,7 +60,7 @@ struct ImportView: View {
                 if !progress.isEmpty {
                     Text(progress)
                         .font(.caption)
-                        .foregroundStyle(Color(hex: "#a1a1aa))
+                        .foregroundStyle(Color(hex: "#a1a1aa"))
                         .padding()
                 }
 
@@ -94,7 +94,7 @@ struct ImportView: View {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button { dismiss() } label: {
                         Image(systemName: "xmark.circle.fill")
-                            .foregroundStyle(Color(hex: "#52525b))
+                            .foregroundStyle(Color(hex: "#52525b"))
                     }
                 }
             }

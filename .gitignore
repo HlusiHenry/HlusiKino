@@ -1,0 +1,10 @@
+# HlusiKino iOS
+.DS_Store
+xcuserdata/
+*.xcworkspace/xcuserdata/
+build/
+DerivedData/
+*.app
+*.ipa
+*.dSYM.zip
+*.dSYM

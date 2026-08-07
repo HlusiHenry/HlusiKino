@@ -40,7 +40,7 @@ struct WatchlistManagerView: View {
                             .padding(6)
                             .background(Color(hex: "#27272a"))
                             .cornerRadius(6)
-                            .foregroundStyle(Color(hex: "#a1a1aa))
+                            .foregroundStyle(Color(hex: "#a1a1aa"))
                     }
 
                     // Delete
@@ -54,7 +54,7 @@ struct WatchlistManagerView: View {
                                 .padding(6)
                                 .background(Color(hex: "#27272a"))
                                 .cornerRadius(6)
-                                .foregroundStyle(Color(hex: "#a1a1aa))
+                                .foregroundStyle(Color(hex: "#a1a1aa"))
                         }
                     }
 
@@ -67,7 +67,7 @@ struct WatchlistManagerView: View {
                             .padding(6)
                             .background(Color(hex: "#27272a"))
                             .cornerRadius(6)
-                            .foregroundStyle(Color(hex: "#a1a1aa))
+                            .foregroundStyle(Color(hex: "#a1a1aa"))
                     }
                     Button {
                         appState.moveWatchlist(selectedList, direction: 1)
@@ -77,7 +77,7 @@ struct WatchlistManagerView: View {
                             .padding(6)
                             .background(Color(hex: "#27272a"))
                             .cornerRadius(6)
-                            .foregroundStyle(Color(hex: "#a1a1aa))
+                            .foregroundStyle(Color(hex: "#a1a1aa"))
                     }
 
                     Spacer()
@@ -91,7 +91,7 @@ struct WatchlistManagerView: View {
                             .padding(6)
                             .background(Color(hex: "#27272a"))
                             .cornerRadius(6)
-                            .foregroundStyle(Color(hex: "#a1a1aa))
+                            .foregroundStyle(Color(hex: "#a1a1aa"))
                     }
                 }
                 .padding(.horizontal, 16)
@@ -139,7 +139,7 @@ struct WatchlistManagerView: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 EditButton()
-                    .foregroundStyle(Color(hex: "#3b82f6))
+                    .foregroundStyle(Color(hex: "#3b82f6"))
             }
             .onAppear {
                 selectedList = appState.activeWatchlistName ?? "Main"
@@ -178,18 +178,18 @@ struct WatchlistRow: View {
                 VStack(alignment: .leading, spacing: 4) {
                     Text(entry.title)
                         .font(.subheadline.bold())
-                        .foregroundStyle(Color(hex: "#fafafa))
+                        .foregroundStyle(Color(hex: "#fafafa"))
                         .lineLimit(2)
                     Text(entry.type == .tv ? "Series" : "Movie")
                         .font(.caption)
-                        .foregroundStyle(Color(hex: "#a1a1aa))
+                        .foregroundStyle(Color(hex: "#a1a1aa"))
                 }
 
                 Spacer()
 
                 Image(systemName: "chevron.right")
                     .font(.caption)
-                    .foregroundStyle(Color(hex: "#52525b))
+                    .foregroundStyle(Color(hex: "#52525b"))
             }
             .padding(.vertical, 6)
         }

@@ -30,10 +30,10 @@ struct ChannelPlayerView: View {
                 HStack {
                     Text(channel.name)
                         .font(.subheadline.bold())
-                        .foregroundStyle(Color(hex: "#fafafa))
+                        .foregroundStyle(Color(hex: "#fafafa"))
                     Text("· \(channel.country)")
                         .font(.caption)
-                        .foregroundStyle(Color(hex: "#a1a1aa))
+                        .foregroundStyle(Color(hex: "#a1a1aa"))
                     Spacer()
 
                     if channel.fallbackURL != nil {
@@ -42,14 +42,14 @@ struct ChannelPlayerView: View {
                             isLoading = true
                         }
                         .font(.caption.bold())
-                        .foregroundStyle(Color(hex: "#3b82f6))
+                        .foregroundStyle(Color(hex: "#3b82f6"))
                     }
 
                     Button {
                         isLoading = true
                     } label: {
                         Image(systemName: "arrow.clockwise")
-                            .foregroundStyle(Color(hex: "#a1a1aa))
+                            .foregroundStyle(Color(hex: "#a1a1aa"))
                     }
                 }
                 .padding(.horizontal, 16)
@@ -63,7 +63,7 @@ struct ChannelPlayerView: View {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button { dismiss() } label: {
                         Image(systemName: "xmark.circle.fill")
-                            .foregroundStyle(Color(hex: "#52525b))
+                            .foregroundStyle(Color(hex: "#52525b"))
                     }
                 }
             }

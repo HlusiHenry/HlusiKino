@@ -149,7 +149,7 @@ struct HeroBanner: View {
                 if let overview = item.overview, !overview.isEmpty {
                     Text(overview)
                         .font(.caption)
-                        .foregroundStyle(Color(hex: "#a1a1aa))
+                        .foregroundStyle(Color(hex: "#a1a1aa"))
                         .lineLimit(3)
                 }
 
@@ -251,12 +251,12 @@ struct MediaCard: View {
                 HStack(spacing: 4) {
                     Image(systemName: "star.fill")
                         .font(.system(size: 8))
-                        .foregroundStyle(Color(hex: "#f59e0b))
+                        .foregroundStyle(Color(hex: "#f59e0b"))
                     Text(item.displayRating)
                     Text(item.displayYear)
                 }
                 .font(.system(size: 10))
-                .foregroundStyle(Color(hex: "#a1a1aa))
+                .foregroundStyle(Color(hex: "#a1a1aa"))
             }
         }
     }
@@ -280,10 +280,10 @@ struct WatchlistGrid: View {
                                     .font(.title3.bold())
                                 Text("\(items.count) items")
                                     .font(.caption)
-                                    .foregroundStyle(Color(hex: "#a1a1aa))
+                                    .foregroundStyle(Color(hex: "#a1a1aa"))
                                 Image(systemName: "chevron.right")
                                     .font(.caption)
-                                    .foregroundStyle(Color(hex: "#a1a1aa))
+                                    .foregroundStyle(Color(hex: "#a1a1aa"))
                             }
                             .foregroundStyle(Color(hex: "#fafafa"))
                             .padding(.horizontal, 16)
@@ -339,7 +339,7 @@ struct RecommendationsRow: View {
             VStack(alignment: .leading, spacing: 10) {
                 Text("Recommended for You")
                     .font(.title3.bold())
-                    .foregroundStyle(Color(hex: "#fafafa))
+                    .foregroundStyle(Color(hex: "#fafafa"))
                     .padding(.horizontal, 16)
 
                 ScrollView(.horizontal, showsIndicators: false) {

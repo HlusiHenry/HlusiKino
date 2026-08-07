@@ -82,7 +82,7 @@ struct ChannelListView: View {
                         }
                     } label: {
                         Image(systemName: collapsedGroups.count == groups.count ? "rectangle.expand.vertical" : "rectangle.compress.vertical")
-                            .foregroundStyle(Color(hex: "#a1a1aa))
+                            .foregroundStyle(Color(hex: "#a1a1aa"))
                             .font(.caption)
                     }
                 }
@@ -143,7 +143,7 @@ struct TagButton: View {
                     .stroke(isSelected ? Color(hex: "#e11d48") : Color(hex: "#3f3f46"), lineWidth: 1)
             )
             .cornerRadius(16)
-            .foregroundStyle(isSelected ? Color(hex: "#e11d48") : Color(hex: "#a1a1aa))
+            .foregroundStyle(isSelected ? Color(hex: "#e11d48") : Color(hex: "#a1a1aa"))
         }
     }
 }
@@ -163,21 +163,21 @@ struct ChannelGroupView: View {
                 HStack(spacing: 8) {
                     Image(systemName: "tv")
                         .font(.caption)
-                        .foregroundStyle(Color(hex: "#a1a1aa))
+                        .foregroundStyle(Color(hex: "#a1a1aa"))
 
                     Text(group.displayName)
                         .font(.subheadline.bold())
-                        .foregroundStyle(Color(hex: "#fafafa))
+                        .foregroundStyle(Color(hex: "#fafafa"))
 
                     Text("\(group.channelCount) channels")
                         .font(.caption2)
-                        .foregroundStyle(Color(hex: "#52525b))
+                        .foregroundStyle(Color(hex: "#52525b"))
 
                     Spacer()
 
                     Image(systemName: isCollapsed ? "chevron.right" : "chevron.down")
                         .font(.caption)
-                        .foregroundStyle(Color(hex: "#52525b))
+                        .foregroundStyle(Color(hex: "#52525b"))
                 }
                 .padding(.horizontal, 16)
                 .padding(.vertical, 12)
@@ -219,10 +219,10 @@ struct ChannelRow: View {
                 VStack(alignment: .leading, spacing: 2) {
                     Text(channel.name)
                         .font(.subheadline)
-                        .foregroundStyle(Color(hex: "#fafafa))
+                        .foregroundStyle(Color(hex: "#fafafa"))
                     Text(channel.country)
                         .font(.caption2)
-                        .foregroundStyle(Color(hex: "#52525b))
+                        .foregroundStyle(Color(hex: "#52525b"))
                 }
 
                 Spacer()
@@ -236,13 +236,13 @@ struct ChannelRow: View {
                             .padding(.vertical, 2)
                             .background(Color(hex: "#27272a"))
                             .cornerRadius(3)
-                            .foregroundStyle(Color(hex: "#a1a1aa))
+                            .foregroundStyle(Color(hex: "#a1a1aa"))
                     }
                 }
 
                 Image(systemName: "chevron.right")
                     .font(.caption2)
-                    .foregroundStyle(Color(hex: "#52525b))
+                    .foregroundStyle(Color(hex: "#52525b"))
             }
             .padding(.horizontal, 16)
             .padding(.vertical, 10)

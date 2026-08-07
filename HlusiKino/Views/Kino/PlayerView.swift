@@ -43,7 +43,7 @@ struct PlayerView: View {
                     HStack {
                         Text("Source \(sourceIndex + 1)/\(sources.count)")
                             .font(.caption)
-                            .foregroundStyle(Color(hex: "#a1a1aa))
+                            .foregroundStyle(Color(hex: "#a1a1aa"))
 
                         Spacer()
 
@@ -52,13 +52,13 @@ struct PlayerView: View {
                             isLoading = true
                         }
                         .font(.caption.bold())
-                        .foregroundStyle(Color(hex: "#3b82f6))
+                        .foregroundStyle(Color(hex: "#3b82f6"))
 
                         Button {
                             isLoading = true
                         } label: {
                             Image(systemName: "arrow.clockwise")
-                                .foregroundStyle(Color(hex: "#a1a1aa))
+                                .foregroundStyle(Color(hex: "#a1a1aa"))
                         }
                     }
                     .padding(.horizontal, 16)
@@ -71,7 +71,7 @@ struct PlayerView: View {
                     HStack(spacing: 12) {
                         Text("S\(season ?? 1) E\(episode ?? 1)")
                             .font(.caption)
-                            .foregroundStyle(Color(hex: "#a1a1aa))
+                            .foregroundStyle(Color(hex: "#a1a1aa"))
                         Spacer()
                     }
                     .padding(.horizontal, 16)
@@ -86,7 +86,7 @@ struct PlayerView: View {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button { dismiss() } label: {
                         Image(systemName: "xmark.circle.fill")
-                            .foregroundStyle(Color(hex: "#52525b))
+                            .foregroundStyle(Color(hex: "#52525b"))
                     }
                 }
             }

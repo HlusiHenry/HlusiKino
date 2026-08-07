@@ -45,12 +45,12 @@ struct SearchView: View {
                             .font(.system(size: 48))
                             .foregroundStyle(Color(hex: "#27272a"))
                         Text("Search for movies & TV shows")
-                            .foregroundStyle(Color(hex: "#52525b))
+                            .foregroundStyle(Color(hex: "#52525b"))
                     }
                     .padding(.top, 80)
                 } else if results.isEmpty {
                     Text("Nothing found for \"\(query)\"")
-                        .foregroundStyle(Color(hex: "#52525b))
+                        .foregroundStyle(Color(hex: "#52525b"))
                         .padding(.top, 40)
                 } else {
                     ScrollView {
@@ -120,14 +120,14 @@ struct SearchResultRow: View {
                             .cornerRadius(4)
                     }
                     .font(.caption2)
-                    .foregroundStyle(Color(hex: "#a1a1aa))
+                    .foregroundStyle(Color(hex: "#a1a1aa"))
                 }
 
                 Spacer()
 
                 Image(systemName: "chevron.right")
                     .font(.caption)
-                    .foregroundStyle(Color(hex: "#52525b))
+                    .foregroundStyle(Color(hex: "#52525b"))
             }
             .padding(.horizontal, 16)
             .padding(.vertical, 10)

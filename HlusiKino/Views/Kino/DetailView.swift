@@ -66,25 +66,25 @@ struct DetailView: View {
                         VStack(alignment: .leading, spacing: 16) {
                             Text(d.displayTitle)
                                 .font(.system(size: 24, weight: .bold, design: .rounded))
-                                .foregroundStyle(Color(hex: "#fafafa))
+                                .foregroundStyle(Color(hex: "#fafafa"))
 
                             // Meta row
                             HStack(spacing: 12) {
                                 Label(d.displayRating, systemImage: "star.fill")
-                                    .foregroundStyle(Color(hex: "#f59e0b))
+                                    .foregroundStyle(Color(hex: "#f59e0b"))
                                 Text(d.displayYear)
                                 Text((d.originalLanguage ?? "").uppercased())
                                 Text(d.inferredType == .tv ? "Series" : "Movie")
                                     .padding(.horizontal, 8)
                                     .padding(.vertical, 2)
-                                    .background(Color(hex: "#3b82f6).opacity(0.2))
+                                    .background(Color(hex: "#3b82f6").opacity(0.2))
                                     .cornerRadius(4)
                                 if let rt = d.runtime {
                                     Text("\(rt / 60)h \(rt % 60)m")
                                 }
                             }
                             .font(.caption)
-                            .foregroundStyle(Color(hex: "#a1a1aa))
+                            .foregroundStyle(Color(hex: "#a1a1aa"))
 
                             // Genres
                             if let genres = d.genres, !genres.isEmpty {
@@ -97,7 +97,7 @@ struct DetailView: View {
                                                 .padding(.vertical, 4)
                                                 .background(Color(hex: "#27272a"))
                                                 .cornerRadius(6)
-                                                .foregroundStyle(Color(hex: "#a1a1aa))
+                                                .foregroundStyle(Color(hex: "#a1a1aa"))
                                         }
                                     }
                                 }
@@ -107,7 +107,7 @@ struct DetailView: View {
                             if let overview = d.overview, !overview.isEmpty {
                                 Text(overview)
                                     .font(.subheadline)
-                                    .foregroundStyle(Color(hex: "#d4d4d8))
+                                    .foregroundStyle(Color(hex: "#d4d4d8"))
                                     .lineSpacing(4)
                             }
 
@@ -142,7 +142,7 @@ struct DetailView: View {
                                         .background(Color(hex: "#27272a"))
                                         .cornerRadius(10)
                                         .font(.subheadline)
-                                        .foregroundStyle(Color(hex: "#fafafa))
+                                        .foregroundStyle(Color(hex: "#fafafa"))
                                 }
                             }
 
@@ -158,7 +158,7 @@ struct DetailView: View {
                                 VStack(alignment: .leading, spacing: 8) {
                                     Text("Cast")
                                         .font(.headline)
-                                        .foregroundStyle(Color(hex: "#fafafa))
+                                        .foregroundStyle(Color(hex: "#fafafa"))
                                     ScrollView(.horizontal, showsIndicators: false) {
                                         HStack(spacing: 12) {
                                             ForEach(cast) { member in
@@ -176,11 +176,11 @@ struct DetailView: View {
 
                                                     Text(member.name.components(separatedBy: " ").prefix(2).joined(separator: " "))
                                                         .font(.caption2)
-                                                        .foregroundStyle(Color(hex: "#fafafa))
+                                                        .foregroundStyle(Color(hex: "#fafafa"))
                                                         .lineLimit(1)
                                                     Text(member.displayCharacter)
                                                         .font(.caption2)
-                                                        .foregroundStyle(Color(hex: "#a1a1aa))
+                                                        .foregroundStyle(Color(hex: "#a1a1aa"))
                                                         .lineLimit(1)
                                                 }
                                                 .frame(width: 72)
@@ -195,7 +195,7 @@ struct DetailView: View {
                                 VStack(alignment: .leading, spacing: 8) {
                                     Text("Episodes")
                                         .font(.headline)
-                                        .foregroundStyle(Color(hex: "#fafafa))
+                                        .foregroundStyle(Color(hex: "#fafafa"))
 
                                     Picker("Season", selection: $selectedSeason) {
                                         ForEach(seasons) { s in
@@ -227,7 +227,7 @@ struct DetailView: View {
                                 Link(destination: URL(string: homepage)!) {
                                     Label("Website", systemImage: "globe")
                                         .font(.caption)
-                                        .foregroundStyle(Color(hex: "#3b82f6))
+                                        .foregroundStyle(Color(hex: "#3b82f6"))
                                 }
                             }
                         }
@@ -242,7 +242,7 @@ struct DetailView: View {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button { dismiss() } label: {
                         Image(systemName: "xmark.circle.fill")
-                            .foregroundStyle(Color(hex: "#52525b))
+                            .foregroundStyle(Color(hex: "#52525b"))
                     }
                 }
             }
@@ -293,22 +293,22 @@ struct EpisodeRow: View {
             HStack(spacing: 12) {
                 Text("\(episode.episodeNumber)")
                     .font(.caption.bold())
-                    .foregroundStyle(Color(hex: "#a1a1aa))
+                    .foregroundStyle(Color(hex: "#a1a1aa"))
                     .frame(width: 28)
 
                 VStack(alignment: .leading, spacing: 2) {
                     Text(episode.name ?? "Episode \(episode.episodeNumber)")
                         .font(.subheadline)
-                        .foregroundStyle(Color(hex: "#fafafa))
+                        .foregroundStyle(Color(hex: "#fafafa"))
                     Text("\(episode.runtime ?? 0) min · \(episode.airDate ?? "TBA")")
                         .font(.caption)
-                        .foregroundStyle(Color(hex: "#52525b))
+                        .foregroundStyle(Color(hex: "#52525b"))
                 }
 
                 Spacer()
 
                 Image(systemName: "play.circle")
-                    .foregroundStyle(Color(hex: "#3b82f6))
+                    .foregroundStyle(Color(hex: "#3b82f6"))
             }
             .padding(.vertical, 8)
             .padding(.horizontal, 4)
